@@ -1,6 +1,6 @@
 # CCI-recursion-and-dynamic-programming
 
-## 4.0 Memoization - Top-Down Dynamic programming on Fibonacci
+## 8.0 Memoization - Top-Down Dynamic programming on Fibonacci
 
 Fibonacci sequence -> 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ... Each number equals the sum of the number before + two numbers before in sequence.
 For this exercise I'm not returnig the tree with the sum, I'm implementing some code to create the tree of calls simulating I want to sum in this way: the number X = (X-1) + (X-2)
@@ -10,12 +10,12 @@ I did implement two version of the exercise to test fibonacci, the second of the
 NOTE: as the exercise is implemented, the result of Fibonacci(2)= 1, Fibonacci(3)= 2. So the exercise is to show the approach 
 IMPLEMENTATION:
 - I did implement a brutal solution as a start, method "FibonacciCalculation(int aNumber)", covered by UT
-  - then I did implement the **memoization** version of it, method "FibonacciMemoizationCalculation". Basically I pass around an array, the key is the node, if the value for the key is zero I save the value in order to be reused, otherwise I skip the calculation by reusing the value in the array.
+  - then I did implement **memoization** version of it
+    - "**Top Down Recursive**" method "FibonacciMemoizationTopDownCalculation". I pass around an array, the key is the node, if the value for the key is zero I save the value in order to be reused, otherwise I skip the calculation by reusing the value in the array.
+    - "**Bottom Up Iterative**" method "FibonacciMemoizationBottomUpCalculation". I iteratively populate the array indexes with sums starting from base cases. 
 
-
-
-## 4.1 Routes Between Nodes
-Given a directed graph, design an algorithm to find out whether there is a route between two nodes.
+## 8.1 Triple step
+A child is running up a staircase with "n" steps and can hop either 1 step, 2 steps, 3 steps at a time. Implement a method to count how many possible way the child can run up the stairs.
 
 SOLUTION:
 

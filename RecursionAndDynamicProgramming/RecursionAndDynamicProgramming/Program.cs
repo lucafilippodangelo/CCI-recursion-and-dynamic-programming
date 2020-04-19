@@ -33,29 +33,45 @@ namespace RecursionAndDynamicProgramming
             return minusOneCalculation + minusTwoCalculation; 
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="aNumber"></param>
-        /// <returns></returns>
-        public static int FibonacciMemoizationCalculation(int aNumber)
+        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        public static int FibonacciMemoizationTopDownCalculation(int aNumber)
         {
-            return FibonacciMemoizationCalculation(aNumber, new int[aNumber+1]);
+            return FibonacciMemoizationTopDownCalculation(aNumber, new int[aNumber+1]);
         }
 
-        public static int FibonacciMemoizationCalculation(int aNumber, int[] memo)
+        public static int FibonacciMemoizationTopDownCalculation(int aNumber, int[] memo)
         {
             if (aNumber == 0 || aNumber == 1)
                 return aNumber;
 
             if (memo[aNumber] == 0) //default setup for the position in the array
             {
-                var minusOneCalculation = FibonacciMemoizationCalculation(aNumber - 1, memo);
-                var minusTwoCalculation = FibonacciMemoizationCalculation(aNumber - 2, memo);
+                var minusOneCalculation = FibonacciMemoizationTopDownCalculation(aNumber - 1, memo);
+                var minusTwoCalculation = FibonacciMemoizationTopDownCalculation(aNumber - 2, memo);
                 memo[aNumber] = minusOneCalculation + minusTwoCalculation;
             }
 
             return memo[aNumber];
+        }
+
+        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        public static int FibonacciMemoizationBottomUpCalculation(int aNumber)
+        {
+            if (aNumber == 0 || aNumber == 1)
+                return aNumber;
+
+            int[] memo = new int[aNumber];
+            memo[0] = 0;
+            memo[1] = 1;
+
+            for (int anIndex = 2; anIndex < aNumber; anIndex++)
+            {
+                memo[anIndex] = memo[anIndex - 1] + memo[anIndex - 2];
+            }
+
+            return memo[aNumber -1] + memo[aNumber - 2];
         }
 
         /*
@@ -110,7 +126,7 @@ namespace RecursionAndDynamicProgramming
         {
             var initialDateTime = DateTime.Now;
 
-            var aReturnedValue = methodsToTest.FibonacciCalculation(3);
+            var aReturnedValue = methodsToTest.FibonacciCalculation(50);
 
             Assert.Equal(4, 4);
 
@@ -120,11 +136,11 @@ namespace RecursionAndDynamicProgramming
         }
 
         [Fact]
-        public void FibonacciMemoizationCalculationTest()
+        public void FibonacciMemoizationTopDownCalculationTest()
         {
             var initialDateTime = DateTime.Now;
 
-            var aReturnedValue = methodsToTest.FibonacciMemoizationCalculation(3);
+            var aReturnedValue = methodsToTest.FibonacciMemoizationTopDownCalculation(40);
 
             Assert.Equal(4, 4);
 
@@ -132,6 +148,21 @@ namespace RecursionAndDynamicProgramming
             //40 -> 0.002  sec
             //4  -> 0.001 sec
         }
+
+        [Fact]
+        public void FibonacciMemoizationBottomUpCalculationTest()
+        {
+            var initialDateTime = DateTime.Now;
+
+            var aReturnedValue = methodsToTest.FibonacciMemoizationBottomUpCalculation(100);
+
+            Assert.Equal(4, 4);
+
+            var finaldateTime = DateTime.Now - initialDateTime;
+            //40 -> 0.002  sec
+            //4  -> 0.001 sec
+        }
+
 
     }
 }
