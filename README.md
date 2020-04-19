@@ -21,7 +21,10 @@ SOLUTION:
 
 ![Image description](https://github.com/lucafilippodangelo/CCI-recursion-and-dynamic-programming/blob/master/RecursionAndDynamicProgramming/RecursionAndDynamicProgramming/Images/TripleStep_exampleWithTwoHopsAndDepthFour.jpg)
 
-Starting from the top node I go down until the base case, the base case is that one where is not possible anymore to do any type of further step(one,two or three). At each level I save in an array the number of possible hops, and I try to reuse them up to the root. Then I return at the last recursive interaction.
+Starting from the top node I go down until the base case, the base case is that one where is not possible anymore to do any type of further step(one,two or three). 
+At each level I save in an array the number of possible hops, and I try to reuse them up to the root. 
+**For instance** in the image I did an example with just hops of "one" and "two". At "Level Node Three" I can potentially make the hops of "step Node Two"(a total of 3) + "step Node One" (a total of 1), I could update the function in order to add another "two steps": node 3 to node 2 + node 3 to node one
+Then I return at the last recursive interaction.
 
 
 [**Implementation Triple Step**](https://github.com/lucafilippodangelo/CCI-recursion-and-dynamic-programming/blob/master/RecursionAndDynamicProgramming/RecursionAndDynamicProgramming/8.1_TripleStep.cs)

@@ -48,7 +48,8 @@ namespace RecursionAndDynamicProgramming
 
                 var a = TripleStepTopDownRecursiveMemoization(depth - 1);
                 var b = TripleStepTopDownRecursiveMemoization(depth - 2);
-                memo[depth] = a + b;
+                var c = TripleStepTopDownRecursiveMemoization(depth - 2);
+                memo[depth] = a + b + c;
 
                 return memo[depth];
             }
