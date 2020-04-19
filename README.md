@@ -1,6 +1,7 @@
 # CCI-recursion-and-dynamic-programming
 
-##4.0 Memoization - Top-Down Dynamic programming on Fibonacci
+## 4.0 Memoization - Top-Down Dynamic programming on Fibonacci
+
 Fibonacci sequence -> 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ... Each number equals the sum of the number before + two numbers before in sequence.
 For this exercise I'm not returnig the tree with the sum, I'm implementing some code to create the tree of calls simulating I want to sum in this way: the number X = (X-1) + (X-2)
 
