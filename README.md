@@ -19,7 +19,7 @@ IMPLEMENTATION:
 
 SOLUTION:
 
-![Image description](link-to-image)
+![Image description](https://github.com/lucafilippodangelo/CCI-recursion-and-dynamic-programming/blob/master/RecursionAndDynamicProgramming/RecursionAndDynamicProgramming/Images/TripleStep_exampleWithTwoHopsAndDepthFour.jpg)
 
 Starting from the top node I go down until the base case, the base case is that one where is not possible anymore to do any type of further step(one,two or three). At each level I save in an array the number of possible hops, and I try to reuse them up to the root. Then I return at the last recursive interaction.
 
