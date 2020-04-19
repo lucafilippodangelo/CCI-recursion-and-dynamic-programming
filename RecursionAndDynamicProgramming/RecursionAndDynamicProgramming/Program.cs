@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Xunit;
 
 namespace RecursionAndDynamicProgramming
@@ -12,9 +13,52 @@ namespace RecursionAndDynamicProgramming
         }
     }
 
-    /*
-    public class testsPrep
+   
+    public class methodsToTest
     {
+
+        public static int FibonacciCalculation(int aNumber)
+        {
+            if (aNumber == 0)
+            {
+                return 0;
+            }
+            if (aNumber == 1)
+            {
+                return 1;
+            }
+
+            var minusOneCalculation = FibonacciCalculation(aNumber - 1);
+            var minusTwoCalculation = FibonacciCalculation(aNumber - 2);
+            return minusOneCalculation + minusTwoCalculation; 
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="aNumber"></param>
+        /// <returns></returns>
+        public static int FibonacciMemoizationCalculation(int aNumber)
+        {
+            return FibonacciMemoizationCalculation(aNumber, new int[aNumber+1]);
+        }
+
+        public static int FibonacciMemoizationCalculation(int aNumber, int[] memo)
+        {
+            if (aNumber == 0 || aNumber == 1)
+                return aNumber;
+
+            if (memo[aNumber] == 0) //default setup for the position in the array
+            {
+                var minusOneCalculation = FibonacciMemoizationCalculation(aNumber - 1, memo);
+                var minusTwoCalculation = FibonacciMemoizationCalculation(aNumber - 2, memo);
+                memo[aNumber] = minusOneCalculation + minusTwoCalculation;
+            }
+
+            return memo[aNumber];
+        }
+
+        /*
         public static IEnumerable<object[]> PrepBSTSequences()
         {
 
@@ -49,9 +93,12 @@ namespace RecursionAndDynamicProgramming
 
 
         }
+        */
 
     }
-    */
+    
+   
+
     public class tests
     {
 
@@ -59,11 +106,32 @@ namespace RecursionAndDynamicProgramming
         [Fact]
         //[Theory]
         //[MemberData(nameof(testsPrep.PrepBSTSequences), MemberType = typeof(testsPrep))]
-        public void BSTSequences() //4.9
+        public void FibonacciCalculationTest() 
         {
+            var initialDateTime = DateTime.Now;
+
+            var aReturnedValue = methodsToTest.FibonacciCalculation(3);
 
             Assert.Equal(4, 4);
 
+            var finaldateTime = DateTime.Now - initialDateTime;
+            //40 -> 1.80  sec
+            //4  -> 0.001 sec
         }
+
+        [Fact]
+        public void FibonacciMemoizationCalculationTest()
+        {
+            var initialDateTime = DateTime.Now;
+
+            var aReturnedValue = methodsToTest.FibonacciMemoizationCalculation(3);
+
+            Assert.Equal(4, 4);
+
+            var finaldateTime = DateTime.Now - initialDateTime;
+            //40 -> 0.002  sec
+            //4  -> 0.001 sec
+        }
+
     }
 }
