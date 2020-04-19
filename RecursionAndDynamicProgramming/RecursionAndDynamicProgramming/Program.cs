@@ -49,7 +49,9 @@ namespace RecursionAndDynamicProgramming
             {
                 var minusOneCalculation = FibonacciMemoizationTopDownCalculation(aNumber - 1, memo);
                 var minusTwoCalculation = FibonacciMemoizationTopDownCalculation(aNumber - 2, memo);
-                memo[aNumber] = minusOneCalculation + minusTwoCalculation;
+                var minusThreeCalculation = FibonacciMemoizationTopDownCalculation(aNumber - 3, memo);
+
+                memo[aNumber] = minusOneCalculation + minusTwoCalculation + minusThreeCalculation;
             }
 
             return memo[aNumber];

@@ -22,4 +22,4 @@ SOLUTION:
 Starting from the top node I go down until the base case, the base case is that one where is not possible anymore to do any type of further step(one,two or three). At each level I save in an array the number of possible hops, and I try to reuse them up to the root. Then I return at the last recursive interaction.
 
 
-[**link text**](https://github.com/lucafilippodangelo/CCI-trees-and-graphs/tree/master/Q4_01_RouteBetweenNodes)
+[**Implementation Triple Step**](https://github.com/lucafilippodangelo/CCI-recursion-and-dynamic-programming/blob/master/RecursionAndDynamicProgramming/RecursionAndDynamicProgramming/8.1_TripleStep.cs)
