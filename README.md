@@ -19,15 +19,7 @@ A child is running up a staircase with "n" steps and can hop either 1 step, 2 st
 
 SOLUTION:
 
-It's an implemetation of a BFS(Breadth First Search), the problem can be solved with just a simple graphs traversal, the scope is to visit before all the immediate neighbors. We start with one node and check if the other node is found. We have to mark nodes as already visited.
+Starting from the top node I go down until the base case, the base case is that one where is not possible anymore to do any type of further step(one,two or three). At each level I save in an array the number of possible hops, and I try to reuse them up to the root. Then I return at the last recursive interaction.
 
-LOGIC:
-
-- a
-- b
-  - b1
-    - b2
-    - b3
-      - c
 
 [**link text**](https://github.com/lucafilippodangelo/CCI-trees-and-graphs/tree/master/Q4_01_RouteBetweenNodes)
