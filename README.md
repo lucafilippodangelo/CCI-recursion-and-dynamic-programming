@@ -15,9 +15,11 @@ IMPLEMENTATION:
     - "**Bottom Up Iterative**" method "FibonacciMemoizationBottomUpCalculation". I iteratively populate the array indexes with sums starting from base cases. 
 
 ## 8.1 Triple step
-A child is running up a staircase with "n" steps and can hop either 1 step, 2 steps, 3 steps at a time. Implement a method to count how many possible way the child can run up the stairs.
+**Exercise:** A child is running up a staircase with "n" steps and can hop either 1 step, 2 steps, 3 steps at a time. Implement a method to count how many possible way the child can run up the stairs.
 
 SOLUTION:
+
+![Image description](link-to-image)
 
 Starting from the top node I go down until the base case, the base case is that one where is not possible anymore to do any type of further step(one,two or three). At each level I save in an array the number of possible hops, and I try to reuse them up to the root. Then I return at the last recursive interaction.
 
