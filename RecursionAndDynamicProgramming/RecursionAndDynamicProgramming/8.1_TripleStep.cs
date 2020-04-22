@@ -6,7 +6,7 @@ using Xunit;
 namespace RecursionAndDynamicProgramming
 {
 
-    public class testsTripleStep
+    public class TestsTripleStep
     {
 
 
