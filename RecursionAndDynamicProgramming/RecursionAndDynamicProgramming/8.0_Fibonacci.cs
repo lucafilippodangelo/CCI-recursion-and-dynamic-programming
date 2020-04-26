@@ -118,7 +118,7 @@ namespace RecursionAndDynamicProgramming
             {
                 var initialDateTime = DateTime.Now;
 
-                var aReturnedValue = methodsToTest.FibonacciCalculation(40);
+                var aReturnedValue = methodsToTest.FibonacciCalculation(3);
 
                 Assert.Equal(4, 4);
 
