@@ -52,6 +52,14 @@ I consider as base case the top-left position,
 
 COMPLEXITY:
 
-Would be O(2^Nrow+columns) where "2" is the split happening at each recursion and "row+columns" is the depth. With Memoization complexity is O("row+columns") because a new calculation is done only for undiscovered cases.
+Would be O(2^row+columns) where "2" is the split happening at each recursion and "row+columns" is the depth. With Memoization complexity is O("row+columns") because a new calculation is done only for undiscovered cases.
 
 [**Implementation Robot In A Grid**](https://github.com/lucafilippodangelo/CCI-recursion-and-dynamic-programming/blob/master/RecursionAndDynamicProgramming/RecursionAndDynamicProgramming/8.2_RobotInAGrid.cs)
+
+## 8.3 Magic Index
+
+**Exercise One:** A magic index in an array A[1...n-1] is defined to be an index such that A[i] = i. Given a sorted array of **distinct** integers, write a method to find a magic index if one exists in the array A. 
+
+SOLUTION: did implement a recursive binary search
+
+**Exercise Two:** A magic index in an array A[1...n-1] is defined to be an index such that A[i] = i. Given a sorted array of **not distinct** integers, write a method to find a magic index if one exists in the array A. 
