@@ -31,9 +31,27 @@ At each level I save in an array the number of possible hops, and I try to reuse
 
 Then I return at the last recursive interaction.
 
+COMPLEXITY:
+
+Would be O(3^N) where "3" is the split happening at each recursion and "N" is the depth. With Memoization complexity is O(N) because a new calculation is done only for undiscovered cases.
 
 [**Implementation Triple Step**](https://github.com/lucafilippodangelo/CCI-recursion-and-dynamic-programming/blob/master/RecursionAndDynamicProgramming/RecursionAndDynamicProgramming/8.1_TripleStep.cs)
 
 ## 8.2 Robot in a Grid
-Imagine a robot sitting on the upper left corner of grid with r rows and c columns. The robot can only move in two directions, right and down, but certain cels are "off limits" such that the robot cannot step on them. Design an algorithm to find a path for the robot from the top left to the bottom right.
+**Exercise:** Imagine a robot sitting on the upper left corner of grid with r rows and c columns. The robot can only move in two directions, right and down, but certain cels are "off limits" such that the robot cannot step on them. Design an algorithm to find a path for the robot from the top left to the bottom right.
 
+SOLUTION:
+
+The code is well commented. 
+The approach is top down: 
+I consider as base case the top-left position, 
+  - I build a tree of recursion moving from each position right or bottom, 
+    - I go down until I find the goalPosition and consider that as a valid position.
+      - Then I recursively go up the tree of recursion, if I was comong from at least a "valid" position I consider that position valid.
+        - I skip not valid position, did create a condition for that.
+
+COMPLEXITY:
+
+Would be O(2^Nrow+columns) where "2" is the split happening at each recursion and "row+columns" is the depth. With Memoization complexity is O("row+columns") because a new calculation is done only for undiscovered cases.
+
+[**Implementation Robot In A Grid**](https://github.com/lucafilippodangelo/CCI-recursion-and-dynamic-programming/blob/master/RecursionAndDynamicProgramming/RecursionAndDynamicProgramming/8.2_RobotInAGrid.cs)
